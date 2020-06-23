@@ -13,9 +13,7 @@ import {
     Route,
     Link
   } from "react-router-dom";
-// import Item from './component/Item/Item';
-import About from '../Content/Content';
-import Users from '../Content/users'
+
 
 
 const SideBar = ()=>{
@@ -34,28 +32,24 @@ const SideBar = ()=>{
                     <p>Read order</p>
                     <p>Update order</p>
                     <p>Delete order</p> */}
-                    <Router>
             {/* <li>
               <Link to="/">Home</Link>
             </li> */}
             <div>
-              <Link to="/about">About</Link>
+              <Link to="/create-order">Create order</Link>
             </div>
             <div>
-              <Link to="/users">Users</Link>
+              <Link to="/read-order">read order</Link>
+            </div>
+            <div>
+              <Link to="/update-order">Update order</Link>
+            </div>
+            <div>
+              <Link to="/delete-order">Delete order</Link>
             </div>
 
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
-        <Switch>
-          <Route path="/about">
-              <About/>
-          </Route>
-          <Route path="/users">
-              <Users/>
-          </Route>
-        </Switch>
-    </Router>
                 </AccordionItemPanel>
             </AccordionItem>
             <AccordionItem>

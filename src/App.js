@@ -3,10 +3,12 @@ import './App.css';
 import SideBar from './component/SideBar';
 import Header from './component/Header';
 import Content from './component/Content';
-import Users from './component/Content/users';
+import
+{BrowserRouter as Router} from "react-router-dom";
 
 function App() {
   return (
+    <Router>
     <div className="root">
       <div className="app-left">
           <SideBar />
@@ -16,6 +18,7 @@ function App() {
           <Content/>
       </div>
     </div>
+    </Router>
   );
 }
 
