@@ -1,6 +1,5 @@
 import React from 'react';
 import './SideBar.css';
-// import Item from './component/Item';
 import {
     Accordion,
     AccordionItem,
@@ -8,13 +7,22 @@ import {
     AccordionItemButton,
     AccordionItemPanel,
 } from 'react-accessible-accordion';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+  } from "react-router-dom";
+// import Item from './component/Item/Item';
+import About from '../Content/Content';
+import Users from '../Content/users'
 
 
 const SideBar = ()=>{
     return(
     <div className="sidebar">
         <h1>Management System</h1>
-        <Accordion allowMultipleExpanded="ture">
+        <Accordion allowMultipleExpanded="ture" allowZeroExpanded="true">
             <AccordionItem>
                 <AccordionItemHeading>
                     <AccordionItemButton>
@@ -22,10 +30,32 @@ const SideBar = ()=>{
                     </AccordionItemButton>
                 </AccordionItemHeading>
                 <AccordionItemPanel>
-                    <p>Create order</p>
+                    {/* <p>Create order</p>
                     <p>Read order</p>
                     <p>Update order</p>
-                    <p>Delete order</p>
+                    <p>Delete order</p> */}
+                    <Router>
+            {/* <li>
+              <Link to="/">Home</Link>
+            </li> */}
+            <div>
+              <Link to="/about">About</Link>
+            </div>
+            <div>
+              <Link to="/users">Users</Link>
+            </div>
+
+        {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+        <Switch>
+          <Route path="/about">
+              <About/>
+          </Route>
+          <Route path="/users">
+              <Users/>
+          </Route>
+        </Switch>
+    </Router>
                 </AccordionItemPanel>
             </AccordionItem>
             <AccordionItem>

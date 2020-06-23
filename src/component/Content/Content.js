@@ -1,10 +1,10 @@
 import React from 'react';
 import './Content.css';
 
-const Content = () =>(
+const About = () =>(
     <div className="content">
-        content
+        About 123
     </div>
 )
 
-export default Content;
+export default About;
