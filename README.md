@@ -66,3 +66,12 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+--------------------------------------------------------------------------------
+### connect to azure SQL
+
+https://docs.microsoft.com/en-gb/azure/azure-sql/database/connect-query-nodejs?tabs=windows
+
+please provide your ip address to 'set server firewall' in azure portal
+
+to check connection with azure SQL , type node sqltest.js in terminal --> should return 20 rows of sample table data
