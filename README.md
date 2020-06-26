@@ -70,6 +70,7 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 --------------------------------------------------------------------------------
 ### connect to azure SQL
 
+currently only Winnie can access azure portal
 https://docs.microsoft.com/en-gb/azure/azure-sql/database/connect-query-nodejs?tabs=windows
 
 please provide your ip address to 'set server firewall' in azure portal
