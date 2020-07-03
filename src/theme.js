@@ -7,6 +7,9 @@ export default {
     Info:'#2196f3',
     Success:'#4caf50',
     textcolor:'#fff',
+    border:'#d9d9d9',
+    buttoncolor:'#1890ff',
+    buttoncolorhover:'#40a9ff',
   },
 
   backgroundColor:{
@@ -25,5 +28,17 @@ export default {
 
   lineHeight:{
     normal: '1.5rem',
+  },
+
+  gutter:{
+    xl:"36px",
+    lg: "24px",
+    md: "16px",
+    sm: "12px",
+    xs:"4px",
+  },
+
+  borderRadius:{
+    sm:"2px",
   }
 }

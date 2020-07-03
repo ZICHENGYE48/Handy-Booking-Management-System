@@ -8,7 +8,6 @@ import {
     AccordionItemPanel,
 } from 'react-accessible-accordion';
 import {
-    BrowserRouter as Router,
     Link
   } from "react-router-dom";
 import styled from 'styled-components';
@@ -40,14 +39,10 @@ import Flex from '../../Flex';
             <AccordionItem>
                 <AccordionItemHeading>
                     <AccordionItemButton>
-                    CRUD order
+                    Orders 
                     </AccordionItemButton>
                 </AccordionItemHeading>
                 <AccordionItemPanel>
-                    {/* <p>Create order</p>
-                    <p>Read order</p>
-                    <p>Update order</p>
-                    <p>Delete order</p> */}
             {/* <li>
               <Link to="/">Home</Link>
             </li> */}
@@ -55,13 +50,7 @@ import Flex from '../../Flex';
               <Link to="/create-order">Create order</Link>
             </div>
             <div>
-              <Link to="/read-order">read order</Link>
-            </div>
-            <div>
-              <Link to="/update-order">Update order</Link>
-            </div>
-            <div>
-              <Link to="/delete-order">Delete order</Link>
+              <Link to="/manage-order">Manage order</Link>
             </div>
 
         {/* A <Switch> looks through its children <Route>s and
@@ -71,40 +60,46 @@ import Flex from '../../Flex';
             <AccordionItem>
                 <AccordionItemHeading>
                     <AccordionItemButton>
-                    CRUD user
+                    User management 
                     </AccordionItemButton>
                 </AccordionItemHeading>
                 <AccordionItemPanel>
-                    <p>Create user</p>
-                    <p>Read user</p>
-                    <p>Update user</p>
-                    <p>Delete user</p>
+                <div>
+                    <Link to="/create-user">Create user</Link>
+                </div>
+                <div>
+                    <Link to="/manage-user">Manage user</Link>
+                </div>
                 </AccordionItemPanel>
             </AccordionItem>
             <AccordionItem>
                 <AccordionItemHeading>
                     <AccordionItemButton>
-                    CRUD tradie
+                    Tradie management
                     </AccordionItemButton>
                 </AccordionItemHeading>
                 <AccordionItemPanel>
-                    <p>Create tradie</p>
-                    <p>Read tradie</p>
-                    <p>Update tradie</p>
-                    <p>Delete tradie</p>
+                <div>
+                    <Link to="/create-tradie">Create tradie</Link>
+                </div>
+                <div>
+                    <Link to="/manage-tradie">Manage tradie</Link>
+                </div>
                 </AccordionItemPanel>
             </AccordionItem>
             <AccordionItem>
                 <AccordionItemHeading>
                     <AccordionItemButton>
-                    CRUD transactions
+                    Transactions management
                     </AccordionItemButton>
                 </AccordionItemHeading>
                 <AccordionItemPanel>
-                    <p>Create transactions</p>
-                    <p>Read transactions</p>
-                    <p>Update transactions</p>
-                    <p>Delete transactions</p>
+                <div>
+                    <Link to="/create-transaction">Create transaction</Link>
+                </div>
+                <div>
+                    <Link to="/manage-transaction">Manage transaction</Link>
+                </div>
                 </AccordionItemPanel>
             </AccordionItem>
         </Accordion>

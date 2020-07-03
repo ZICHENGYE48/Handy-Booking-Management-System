@@ -8,16 +8,23 @@ import Flex from '../component/Flex';
 const Layout = () => {
 
   const Wrapper =styled(Flex)`
-    flex-direction: row;
-    justify-content: space-between;
     min-height: 100vh;
+    flex-direction: row;
   `
+  const Container = styled(Flex)`
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%
+  `
+
   return(
    <Wrapper>
     <SideBar />
-    <Header />
-    <Content />
-    {/* <Footer /> */}
+    <Container>
+      <Header />
+      <Content />
+    </Container>
   </Wrapper>
   )
 }

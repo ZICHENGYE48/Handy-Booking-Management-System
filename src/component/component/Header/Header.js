@@ -7,12 +7,12 @@ import Flex from '../../Flex';
 const Header = () =>{
 
   const Wrapper = styled(Flex)`
-    flex: 1;
     justify-content: flex-end;
     align-items: center;
     flex-direction: row;
     height: 64px;
     box-shadow: 0 1px 4px rgba(0,21,41,.08);
+    width: 100%;
     `
   const Icon = styled.img`
     margin: 0 12px; 

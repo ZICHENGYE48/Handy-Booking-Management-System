@@ -1,19 +1,21 @@
 import React from 'react';
 import {
-    BrowserRouter as Router,
     Route,
   } from "react-router-dom";
-import CreateOrder from './component/create-order';
-import ReadOrder from './component/read-order';
-import UpdateOrder from './component/update-order';
-import DeleteOrder from './component/delete-order';
+import CreateOrder from './component/CreateOrder';
+import ReadOrder from './component/readOrder';
+import UpdateOrder from './component/updateOrder';
+import DeleteOrder from './component/deleteOrder';
 import styled from 'styled-components';
+import Flex from '../../Flex'
+
+
+const Wrapper = styled(Flex)`
+min-height: 700px;
+width: 100%;
+`
 
 const Content = () =>{
-
-  const Wrapper = styled.div`
-     min-height: 716px;
-  `
   return(
   <Wrapper>
         <Route path="/create-order" component={CreateOrder}/> 
