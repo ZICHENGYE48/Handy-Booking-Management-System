@@ -1,8 +1,4 @@
 const express = require('express');
-const bodyParser = require('body-parser')
-const cookieParser = require('cookie-parser')
-const userRouter = require('./user')
-
 // 新建app
 const app = express();
 const model = require('./model')
@@ -97,12 +93,11 @@ Router.get('/loginOut', (req, res) => {
     return res.json({code: 0, msg:'退出成功'})
 })
 
-module.exports = Router
+
 // 这里注意，因为要接受参数，所以在server.js安装body-parser并app.use(bodyParser.json())
-app.use(cookieParser())
-app.use(bodyParser.json()) //解析post 传来的json数据
-app.use('/user',userRouter)
+
 
 app.listen(8000, () => {
     `server is running at port 8000 success~~~`
 })
+module.exports = Router

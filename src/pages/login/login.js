@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {List,InputItem,WingBlank,WhiteSpace, Button} from 'antd-mobile'
-import Logo from '../../components/logo/logo'
+import Logo from '../../component/logo/logo'
 import {connect} from 'react-redux'
 import {login} from '../../redux/user.redux'
 
@@ -22,8 +22,8 @@ import {login} from '../../redux/user.redux'
                   <WhiteSpace></WhiteSpace>
                   <WhiteSpace></WhiteSpace>
                   <List>
-                      <InputItem>lbj-账号</InputItem>
-                      <InputItem>lbj-密码</InputItem>
+                      <InputItem>Username</InputItem>
+                      <InputItem>Password</InputItem>
                   </List>
                   <WhiteSpace></WhiteSpace>
                   <WhiteSpace></WhiteSpace>

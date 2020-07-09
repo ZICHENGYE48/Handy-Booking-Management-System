@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 // mongoose 连接这个数据库并生成"react-login-register"这个集合
-mongoose.connect('mongodb://127.0.0.1:27017/react-login-register')
+mongoose.connect('mongodb://127.0.0.1:27017/Handy-Booking-Management-System')
 
 // 连接成功后的打印
 mongoose.connection.on('connected',() => {
@@ -28,20 +28,3 @@ module.exports = {
         return mongoose.model(m)
     }
 }
-
-// server/user.js
-// 获取注册用户列表
-Router.get('/list',(req,res) => {
-    //清空所有用户
-    // User.remove({},(err,doc) => {
-    //  if(!err) {
-    //      console.log(`用户清空成功`);
-    //  }
-    // })
-    // 在user这个数据模型中查询所有用户
-    User.find({},(err,doc) => {
-        if(!err) {
-            return res.json({code: 0, data: doc,msg: '用户列表获取成功'})
-        }
-    })
-})

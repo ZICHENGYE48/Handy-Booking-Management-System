@@ -12,9 +12,9 @@ import {register} from '../../redux/user.redux'
 )
 
 class Register extends React.Component{
-    componentDidMount(){
+    /*componentDidMount(){
         this.props.handleChange('type', 'genius')
-    }
+    }*/
     handleRegister = () => {
         this.props.register(this.props.state)
         // console.log(this.state)
@@ -42,19 +42,21 @@ class Register extends React.Component{
                         onChange={v => this.props.handleChange('repeatpwd', v)}
                     >确认密码</InputItem>
                     <WhiteSpace />
+                    {/*
                     <RadioItem 
                         checked={this.props.state.type == 'genius'}
                         onChange={() => this.props.handleChange('type', 'genius')}
                     >
-                        trady
+                        trady admin
                     </RadioItem>
                     <WhiteSpace />
                     <RadioItem 
                         checked={this.props.state.type == 'boss'}
                         onChange={() => this.props.handleChange('type', 'boss')}
                     >
-                        Boss
+                        Boss admin
                     </RadioItem>
+                    */}
                     <WhiteSpace />
                     <Button type="primary" onClick={this.handleRegister}>注册</Button>
                 </WingBlank>

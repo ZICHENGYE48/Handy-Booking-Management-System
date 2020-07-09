@@ -11,7 +11,7 @@ const loginSuccess = 'loginSuccess';
 const loginOutSuccess ='loginOutSuccess';
 
 // state初始值
-let initState = {
+const initState = {
     redirectTo: '', // 完成之后跳到哪里
     username: '', // 账号
     pwd: '', // 密码
