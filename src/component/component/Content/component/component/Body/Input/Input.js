@@ -4,6 +4,7 @@ import styled from 'styled-components';
 const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
+  position: relative;
 `
 const Input = styled.input`
   border: 1px solid #d9d9d9;
@@ -20,16 +21,29 @@ const Input = styled.input`
 const Label = styled.label`
   line-height: ${(props)=> props.theme.lineHeight.lg};
 `
-const Item = ({
-  name,
+const Small = styled.small`
+  /* border: 1px solid red; */
+  font-size: 14px;
+  position: absolute;
+  color: red;
+  left: 0;
+  right:0;
+  bottom: 11px;
+` 
+
+const InputContainer = ({
+  id,
   children,
   type,
   placeholder,
+  errorMsg,
+  onChange,
 }) =>(
   <Wrapper>
-    <Label htmlFor={name}>{children}</Label>
-    <Input type={type} name={name} placeholder={placeholder}/>
+    <Label htmlFor={id}>{children}</Label>
+    <Input type={type} id={id} placeholder={placeholder} onChange={(e)=> onChange(e.target.value, id)} />
+    <Small>{errorMsg}</Small>
   </Wrapper>
 );
 
-export default Item;
+export default InputContainer;

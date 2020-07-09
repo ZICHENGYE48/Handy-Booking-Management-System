@@ -6,7 +6,6 @@ import SubmitButton from '../../../../../Button/SubmitButton';
 
 const Body = styled(Flex)`
   padding: ${(props)=> props.theme.gutter.lg};
-  border: 1px solid red;
   width: 100%;
   min-height: 70vh;
   align-items: center;

@@ -31,10 +31,22 @@ import Flex from '../../Flex';
       width: 100%;
       text-align: center;
     `
+
+    const SideLink = styled(Link)`
+      text-decoration: none;
+      display: block;
+      color: ${(props)=>props.theme.color.textcolor2};
+
+      &:hover{
+        color: ${(props)=>props.theme.color.textcolor};
+      }
+    `
  const SideBar = ()=>{   
     return(
     <Wrapper>
-        <Title>Management System</Title>
+        <Title>
+            <SideLink to="/">Management System</SideLink>
+        </Title>
         <Accordion allowMultipleExpanded="ture" allowZeroExpanded="true">
             <AccordionItem>
                 <AccordionItemHeading>
@@ -43,63 +55,43 @@ import Flex from '../../Flex';
                     </AccordionItemButton>
                 </AccordionItemHeading>
                 <AccordionItemPanel>
-            {/* <li>
-              <Link to="/">Home</Link>
-            </li> */}
-            <div>
-              <Link to="/create-order">Create order</Link>
-            </div>
-            <div>
-              <Link to="/manage-order">Manage order</Link>
-            </div>
 
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
+              <SideLink to="/create-order">Create order</SideLink>
+              <SideLink to="/manage-order">Manage order</SideLink>
+
                 </AccordionItemPanel>
             </AccordionItem>
             <AccordionItem>
                 <AccordionItemHeading>
                     <AccordionItemButton>
-                    User management 
+                    Users 
                     </AccordionItemButton>
                 </AccordionItemHeading>
                 <AccordionItemPanel>
-                <div>
-                    <Link to="/create-user">Create user</Link>
-                </div>
-                <div>
-                    <Link to="/manage-user">Manage user</Link>
-                </div>
+                    <SideLink to="/create-user">Create user</SideLink>
+                    <SideLink to="/manage-user">Manage user</SideLink>
                 </AccordionItemPanel>
             </AccordionItem>
             <AccordionItem>
                 <AccordionItemHeading>
                     <AccordionItemButton>
-                    Tradie management
+                    Tradies
                     </AccordionItemButton>
                 </AccordionItemHeading>
                 <AccordionItemPanel>
-                <div>
-                    <Link to="/create-tradie">Create tradie</Link>
-                </div>
-                <div>
-                    <Link to="/manage-tradie">Manage tradie</Link>
-                </div>
+                    <SideLink to="/create-tradie">Create tradie</SideLink>
+                    <SideLink to="/manage-tradie">Manage tradie</SideLink>
                 </AccordionItemPanel>
             </AccordionItem>
             <AccordionItem>
                 <AccordionItemHeading>
                     <AccordionItemButton>
-                    Transactions management
+                    Transactions
                     </AccordionItemButton>
                 </AccordionItemHeading>
                 <AccordionItemPanel>
-                <div>
-                    <Link to="/create-transaction">Create transaction</Link>
-                </div>
-                <div>
-                    <Link to="/manage-transaction">Manage transaction</Link>
-                </div>
+                    <SideLink to="/create-transaction">Create transaction</SideLink>
+                    <SideLink to="/manage-transaction">Manage transaction</SideLink>
                 </AccordionItemPanel>
             </AccordionItem>
         </Accordion>

@@ -7,9 +7,12 @@ export default {
     Info:'#2196f3',
     Success:'#4caf50',
     textcolor:'#fff',
+    textcolor2:'#9fa8b0',
     border:'#d9d9d9',
     buttoncolor:'#1890ff',
     buttoncolorhover:'#40a9ff',
+    buttoncolor2:'#e95027',
+    buttoncolorhover2:'#e83e10',
   },
 
   backgroundColor:{
@@ -28,6 +31,7 @@ export default {
 
   lineHeight:{
     normal: '1.5rem',
+    lg:"30px",
   },
 
   gutter:{
@@ -40,5 +44,6 @@ export default {
 
   borderRadius:{
     sm:"2px",
-  }
+    lg:"20px",
+  },
 }
