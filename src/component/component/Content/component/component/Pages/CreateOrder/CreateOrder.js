@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Input from '../../Body/Input/Input';
 import Flex from '../../../../../../Flex';
 import SubmitButton from '../../../../../../Button/SubmitButton';
+import {Link} from 'react-router-dom';
 
 const Wrapper = styled.div`
   width: 100%;
@@ -38,12 +39,13 @@ class CreateOrder extends React.Component{
       },
     }
     this.HandleOnChange = this.HandleOnChange.bind(this);
+    this.HandleSubmit = this.HandleSubmit.bind(this);
   }
 
   Validator = () =>{
     const { address, telephone, email } = this.state;
     const newState = {...this.state};
-    const regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const regex = /^[a-zA-Z0-9]+@(?:[a-zA-Z0-9]+\.)+[A-Za-z]+$/;
 
     if(address.value.trim() ===""){
       newState.address.errorMsg = "Address can not be null";
@@ -74,11 +76,10 @@ class CreateOrder extends React.Component{
   }
 
   HandleSubmit = (e) =>{
-    e.preventDefault();
-    if(this.Validator()){
-      console.log('succuss');
-    }else{
-      console.log('no succuss');
+    const { address, telephone, email } = this.state;
+    this.Validator();
+    if(address.errorMsg !=="" || telephone.errorMsg !=="" || email.errorMsg !==""){
+      e.preventDefault();
     }
   }
 
@@ -106,7 +107,9 @@ class CreateOrder extends React.Component{
             <Input onChange={(newValue, id)=>this.HandleOnChange(newValue, id)} id="address" errorMsg={address.errorMsg} placeholder = "Please enter your address">Your address:	&nbsp;</Input>
             <Input onChange={(newValue, id)=>this.HandleOnChange(newValue, id)} id="telephone" errorMsg={telephone.errorMsg} placeholder = "Please enter your telephone">Your telephone:	&nbsp;</Input>
             <Input onChange={(newValue, id)=>this.HandleOnChange(newValue, id)} id="email" type="email" errorMsg={email.errorMsg} placeholder = "Please enter your email">Your email:	&nbsp;</Input>
-            <SubmitButton onClick={this.HandleSubmit}>Submit</SubmitButton>
+            <Link to='/create-order/result'>
+              <SubmitButton onClick={this.HandleSubmit}>Submit</SubmitButton>
+            </Link>
           </Body>
           </form>
       </Wrapper>

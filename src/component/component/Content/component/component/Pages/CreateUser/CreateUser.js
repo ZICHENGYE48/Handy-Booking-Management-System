@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Input from '../../Body/Input/Input';
 import Flex from '../../../../../../Flex';
 import SubmitButton from '../../../../../../Button/SubmitButton';
+import { Link } from 'react-router-dom';
 
 const Wrapper = styled.div`
   width: 100%;
@@ -46,12 +47,13 @@ class CreateUser extends React.Component{
       },
     }
     this.HandleOnChange = this.HandleOnChange.bind(this);
+    this.HandleSubmit = this.HandleSubmit.bind(this);
   }
 
   Validator = () =>{
     const { name, address, telephone, email, password, password2 } = this.state;
     const newState = {...this.state};
-    const regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const regex = /^[a-zA-Z0-9]+@(?:[a-zA-Z0-9]+\.)+[A-Za-z]+$/;
 
     if(name.value.trim() ===""){
       newState.name.errorMsg = "Name can not be null";
@@ -117,11 +119,10 @@ class CreateUser extends React.Component{
   }
 
   HandleSubmit = (e) =>{
-    e.preventDefault();
-    if(this.Validator()){
-      console.log('succuss');
-    }else{
-      console.log('no succuss');
+    const { name, address, telephone, email, password, password2 } = this.state;
+    this.Validator();
+    if(name.errorMsg !=="" || address.errorMsg !=="" || telephone.errorMsg !==""  || email.errorMsg !=="" || password.errorMsg !=="" || password2.errorMsg !==""){
+      e.preventDefault();
     }
   }
 
@@ -142,9 +143,11 @@ class CreateUser extends React.Component{
             <Input onChange={(newValue, id)=>this.HandleOnChange(newValue, id)} id="address" errorMsg={address.errorMsg} placeholder = "Please enter address">Enter address:	&nbsp;</Input>
             <Input onChange={(newValue, id)=>this.HandleOnChange(newValue, id)} id="telephone" errorMsg={telephone.errorMsg} placeholder = "Please enter telephone">Enter telephone:	&nbsp;</Input>
             <Input onChange={(newValue, id)=>this.HandleOnChange(newValue, id)} id="email" type="email" errorMsg={email.errorMsg} placeholder = "Please enter email">Enter email:	&nbsp;</Input>
-            <Input onChange={(newValue, id)=>this.HandleOnChange(newValue, id)} id="password" errorMsg={password.errorMsg} placeholder = "Please enter account password">Enter password:	&nbsp;</Input>
-            <Input onChange={(newValue, id)=>this.HandleOnChange(newValue, id)} id="password2" errorMsg={password2.errorMsg} placeholder = "Please confirm account password">Enter password:	&nbsp;</Input>
-            <SubmitButton onClick={this.HandleSubmit}>Submit</SubmitButton>
+            <Input onChange={(newValue, id)=>this.HandleOnChange(newValue, id)} id="password" type="password" errorMsg={password.errorMsg} placeholder = "Please enter account password">Enter password:	&nbsp;</Input>
+            <Input onChange={(newValue, id)=>this.HandleOnChange(newValue, id)} id="password2" type="password" errorMsg={password2.errorMsg} placeholder = "Please confirm account password">Enter password:	&nbsp;</Input>
+            <Link to='/create-user/result'>
+              <SubmitButton onClick={this.HandleSubmit}>Submit</SubmitButton>
+            </Link>
           </Body>
           </form>
       </Wrapper>

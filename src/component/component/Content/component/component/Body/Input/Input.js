@@ -26,7 +26,7 @@ const Small = styled.small`
   font-size: 14px;
   position: absolute;
   color: red;
-  left: 0;
+  left: 100px;
   right:0;
   bottom: 11px;
 ` 
