@@ -16,7 +16,7 @@ import CreateTransactionResult from './component/component/Pages/CreateTransacti
 import ManageTransaction from './component/component/Pages/ManageTransaction';
 import HomePage from './component/component/Pages/Homepage';
 import styled from 'styled-components';
-import Flex from '../../Flex'
+import Flex from '../../Flex';
 
 
 const Wrapper = styled(Flex)`

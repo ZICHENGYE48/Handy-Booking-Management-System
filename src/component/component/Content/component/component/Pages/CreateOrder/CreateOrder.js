@@ -27,14 +27,17 @@ class CreateOrder extends React.Component{
     this.state = {
       address:{
         value:"",
+        validationFailed:"",
         errorMsg: ""
       },
       telephone:{
         value:"",
+        validationFailed:"",
         errorMsg: ""
       },
       email:{
         value:"",
+        validationFailed:"",
         errorMsg: ""
       },
     }
@@ -49,28 +52,35 @@ class CreateOrder extends React.Component{
 
     if(address.value.trim() ===""){
       newState.address.errorMsg = "Address can not be null";
+      newState.address.validationFailed = "true";
       this.setState(newState);
     }else{
       newState.address.errorMsg = "";
+      newState.address.validationFailed = "";
       this.setState(newState);
     }
 
     if(telephone.value.trim() ===""){
       newState.telephone.errorMsg = "Telephone can not be null";
+      newState.telephone.validationFailed = "true";
       this.setState(newState);
     }else{
       newState.telephone.errorMsg = "";
+      newState.telephone.validationFailed = "";
       this.setState(newState);
     }
 
     if(email.value.trim() ===""){
       newState.email.errorMsg = "Email can not be null";
+      newState.email.validationFailed = "true";
       this.setState(newState);
     }else if (!regex.test(email.value.toLowerCase())){
       newState.email.errorMsg = "Email format is wrong";
+      newState.email.validationFailed = "true";
       this.setState(newState);
     }else{
       newState.email.errorMsg = "";
+      newState.email.validationFailed = "";
       this.setState(newState);
     }
   }
@@ -104,9 +114,9 @@ class CreateOrder extends React.Component{
                 <option>Tutor</option>
               </select>
             </Control>
-            <Input onChange={(newValue, id)=>this.HandleOnChange(newValue, id)} id="address" errorMsg={address.errorMsg} placeholder = "Please enter your address">Your address:	&nbsp;</Input>
-            <Input onChange={(newValue, id)=>this.HandleOnChange(newValue, id)} id="telephone" errorMsg={telephone.errorMsg} placeholder = "Please enter your telephone">Your telephone:	&nbsp;</Input>
-            <Input onChange={(newValue, id)=>this.HandleOnChange(newValue, id)} id="email" type="email" errorMsg={email.errorMsg} placeholder = "Please enter your email">Your email:	&nbsp;</Input>
+            <Input validationFailed={address.validationFailed} onChange={(newValue, id)=>this.HandleOnChange(newValue, id)} id="address" errorMsg={address.errorMsg} placeholder = "Please enter your address">Your address:	&nbsp;</Input>
+            <Input validationFailed={telephone.validationFailed} onChange={(newValue, id)=>this.HandleOnChange(newValue, id)} id="telephone" errorMsg={telephone.errorMsg} placeholder = "Please enter your telephone">Your telephone:	&nbsp;</Input>
+            <Input validationFailed={email.validationFailed} onChange={(newValue, id)=>this.HandleOnChange(newValue, id)} id="email" type="email" errorMsg={email.errorMsg} placeholder = "Please enter your email">Your email:	&nbsp;</Input>
             <Link to='/create-order/result'>
               <SubmitButton onClick={this.HandleSubmit}>Submit</SubmitButton>
             </Link>

@@ -46,4 +46,5 @@ export default {
     sm:"2px",
     lg:"20px",
   },
+  
 }

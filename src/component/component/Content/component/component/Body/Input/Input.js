@@ -8,6 +8,7 @@ const Wrapper = styled.div`
 `
 const Input = styled.input`
   border: 1px solid #d9d9d9;
+  border: 1px solid ${(props)=> props.validationFailed ? 'red':'#d9d9d9'};
   min-width: 200px;
   margin: 0;
   margin-bottom: ${(props)=> props.theme.gutter.xl};
@@ -15,15 +16,16 @@ const Input = styled.input`
   line-height: ${(props)=> props.theme.lineHeight.lg};
 
   &:hover{
-    border: 1px solid ${(props)=> props.theme.color.primary};
+    border: 1px solid ${(props)=> props.validationFailed ? 'red' : props.theme.color.primary};
   }
 `
 const Label = styled.label`
   line-height: ${(props)=> props.theme.lineHeight.lg};
 `
 const Small = styled.small`
-  /* border: 1px solid red; */
+  border: 1px solid red;
   font-size: 14px;
+  min-width: 300px;
   position: absolute;
   color: red;
   left: 100px;
@@ -36,12 +38,13 @@ const InputContainer = ({
   children,
   type,
   placeholder,
-  errorMsg,
+  errorMsg, 
   onChange,
+  validationFailed
 }) =>(
   <Wrapper>
     <Label htmlFor={id}>{children}</Label>
-    <Input type={type} id={id} placeholder={placeholder} onChange={(e)=> onChange(e.target.value, id)} />
+    <Input validationFailed={validationFailed} type={type} id={id} placeholder={placeholder} onChange={(e)=> onChange(e.target.value, id)} />
     <Small>{errorMsg}</Small>
   </Wrapper>
 );
