@@ -23,7 +23,6 @@ const Label = styled.label`
   line-height: ${(props)=> props.theme.lineHeight.lg};
 `
 const Small = styled.small`
-  border: 1px solid red;
   font-size: 14px;
   min-width: 300px;
   position: absolute;

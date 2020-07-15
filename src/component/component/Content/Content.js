@@ -22,6 +22,7 @@ import Flex from '../../Flex';
 const Wrapper = styled(Flex)`
   min-height: 700px;
   width: 100%;
+  background-color: ${(props)=>props.theme.backgroundColor.homepage};
 `
 
 const Content = () =>{

@@ -17,14 +17,17 @@ export default {
 
   backgroundColor:{
     primary:'#001529',
+    homepage:'#eff2f5',
   },
 
   fontSize:{
+    xl:'30px',
     lg:'20px',
     md:'14px',
   },
   
   fontWeight:{
+    light:'400',
     normal: '500',
     bold: '600',
   },
