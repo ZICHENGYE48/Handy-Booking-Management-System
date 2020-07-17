@@ -5,16 +5,15 @@ import styled from 'styled-components';
 import Flex from '../../Flex';
 import LogoutButton from '../../Button/LogoutButton';
 
-const Header = () =>{
+const Header = ({className}) =>{
 
   const Wrapper = styled(Flex)`
     justify-content: flex-end;
     align-items: center;
     flex-direction: row;
-    height: 64px;
     box-shadow: 0 1px 4px rgba(0,21,41,.08);
-    width: 100%;
-    `
+  `
+
   const Icon = styled.img`
     margin: 0 12px; 
     cursor: pointer;
@@ -24,7 +23,7 @@ const Header = () =>{
   `
 
   return (
-  <Wrapper>
+  <Wrapper className={className}>
       <Icon src={search} alt="search icon" />
       <Icon src={notification} alt="notification icon" />
       <HeaderButton>LOGOUT</HeaderButton>

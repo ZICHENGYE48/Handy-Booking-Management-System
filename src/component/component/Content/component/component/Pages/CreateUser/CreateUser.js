@@ -2,18 +2,12 @@ import React from 'react';
 import Description from '../../Description';
 import styled from 'styled-components';
 import Input from '../../Body/Input/Input';
-import Flex from '../../../../../../Flex';
 import SubmitButton from '../../../../../../Button/SubmitButton';
 import { Link } from 'react-router-dom';
+import Body from '../../../Body';
 
 const Wrapper = styled.div`
   width: 100%;
-`
-const Body = styled(Flex)`
-  padding:${(props)=>`${props.theme.gutter.lg} 0`};
-  align-items: center;
-  min-height: 550px;
-  flex-direction: column;
 `
 
 class CreateUser extends React.Component{

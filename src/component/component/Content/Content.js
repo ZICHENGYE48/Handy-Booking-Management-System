@@ -21,13 +21,12 @@ import Flex from '../../Flex';
 
 const Wrapper = styled(Flex)`
   min-height: 700px;
-  width: 100%;
-  background-color: ${(props)=>props.theme.backgroundColor.homepage};
+  width: 100%; 
 `
 
-const Content = () =>{
+const Content = ({className}) =>{
   return(
-  <Wrapper>
+  <Wrapper className={className}>
         <Route path="/" component={HomePage} exact/> 
         <Route path="/create-order" component={CreateOrder} exact/> 
         <Route path="/create-order/result" component={CreateOrderResult} exact/> 

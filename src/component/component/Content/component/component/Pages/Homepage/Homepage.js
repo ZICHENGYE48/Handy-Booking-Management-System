@@ -8,6 +8,7 @@ const Wrapper = styled(Flex)`
   flex-flow: wrap;
   align-items: center;
   justify-content: space-around;
+  background-color: ${(props)=>props.theme.backgroundColor.homepage};
 `
 
 const HomePage  = () =>(

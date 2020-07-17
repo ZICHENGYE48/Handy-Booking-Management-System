@@ -7,14 +7,11 @@ import {
     AccordionItemButton,
     AccordionItemPanel,
 } from 'react-accessible-accordion';
-import {
-    Link
-  } from "react-router-dom";
+import {Link} from "react-router-dom";
 import styled from 'styled-components';
 import Flex from '../../Flex';
 
     const Wrapper = styled(Flex)`
-      width: 256px;
       align-items: center;
       flex-direction: column;
       color: rgba(0,0,0,.65);
@@ -22,7 +19,9 @@ import Flex from '../../Flex';
       line-height: ${(props)=>props.theme.lineHeight.normal};
       background-color: ${(props)=>props.theme.backgroundColor.primary};
       font-feature-settings: "tnum","tnum";
+      min-height: 100%;
     `
+
     const Title = styled.h1`
       color: ${(props)=>props.theme.color.textcolor};
       font-weight: ${(props)=>props.theme.fontWeight.bold};
@@ -41,9 +40,9 @@ import Flex from '../../Flex';
         color: ${(props)=>props.theme.color.textcolor};
       }
     `
- const SideBar = ()=>{   
+ const SideBar = ({className})=>{   
     return(
-    <Wrapper>
+    <Wrapper className={className}>
         <Title>
             <SideLink to="/">Management System</SideLink>
         </Title>

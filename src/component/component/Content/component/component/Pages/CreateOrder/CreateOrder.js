@@ -5,16 +5,12 @@ import Input from '../../Body/Input/Input';
 import Flex from '../../../../../../Flex';
 import SubmitButton from '../../../../../../Button/SubmitButton';
 import {Link} from 'react-router-dom';
+import Body from '../../../Body';
 
 const Wrapper = styled.div`
   width: 100%;
 `
-const Body = styled(Flex)`
-  padding:${(props)=>`${props.theme.gutter.lg} 0`};
-  align-items: center;
-  min-height: 550px;
-  flex-direction: column;
-`
+
 const Control =styled(Flex)`
   flex-direction: row;
   margin-bottom: ${(props)=> props.theme.gutter.xl};
@@ -105,22 +101,22 @@ class CreateOrder extends React.Component{
       <Wrapper>
           <form>
           <Description Title="CreateOrder" SubText="CreateOrder subtext"/>
-          <Body>
-            <Control>
-              <label htmlFor="title">Please select your service: &nbsp;</label>
-              <select id="title">
-                <option>Locksmith</option>
-                <option>Plumber</option>
-                <option>Tutor</option>
-              </select>
-            </Control>
-            <Input validationFailed={address.validationFailed} onChange={(newValue, id)=>this.HandleOnChange(newValue, id)} id="address" errorMsg={address.errorMsg} placeholder = "Please enter your address">Your address:	&nbsp;</Input>
-            <Input validationFailed={telephone.validationFailed} onChange={(newValue, id)=>this.HandleOnChange(newValue, id)} id="telephone" errorMsg={telephone.errorMsg} placeholder = "Please enter your telephone">Your telephone:	&nbsp;</Input>
-            <Input validationFailed={email.validationFailed} onChange={(newValue, id)=>this.HandleOnChange(newValue, id)} id="email" type="email" errorMsg={email.errorMsg} placeholder = "Please enter your email">Your email:	&nbsp;</Input>
-            <Link to='/create-order/result'>
-              <SubmitButton onClick={this.HandleSubmit}>Submit</SubmitButton>
-            </Link>
-          </Body>
+            <Body>
+              <Control>
+                <label htmlFor="title">Please select your service: &nbsp;</label>
+                <select id="title">
+                  <option>Locksmith</option>
+                  <option>Plumber</option>
+                  <option>Tutor</option>
+                </select>
+              </Control>
+              <Input validationFailed={address.validationFailed} onChange={(newValue, id)=>this.HandleOnChange(newValue, id)} id="address" errorMsg={address.errorMsg} placeholder = "Please enter your address">Your address:	&nbsp;</Input>
+              <Input validationFailed={telephone.validationFailed} onChange={(newValue, id)=>this.HandleOnChange(newValue, id)} id="telephone" errorMsg={telephone.errorMsg} placeholder = "Please enter your telephone">Your telephone:	&nbsp;</Input>
+              <Input validationFailed={email.validationFailed} onChange={(newValue, id)=>this.HandleOnChange(newValue, id)} id="email" type="email" errorMsg={email.errorMsg} placeholder = "Please enter your email">Your email:	&nbsp;</Input>
+              <Link to='/create-order/result'>
+                <SubmitButton onClick={this.HandleSubmit}>Submit</SubmitButton>
+              </Link>
+            </Body>
           </form>
       </Wrapper>
   )
