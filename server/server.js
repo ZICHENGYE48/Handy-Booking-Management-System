@@ -1,13 +1,21 @@
-const express = require('express');
-const userRouter = require('./user')
-const bodyParser = require('body-parser')
+const model = require('./model')
 const cookieParser = require('cookie-parser')
-// 新建app
-const app = express();
+const bodyParser  = require('body-parser')
+const express = require('express')
+const userRouter = require('./user')
+
+//新建app
+const app = express()
+const server = require('http').Server(app)
 
 app.use(cookieParser())
-app.use(bodyParser.json()) //解析post 传来的json数据
+app.use(bodyParser.urlencoded({
+    extended: true
+  }));
+app.use(bodyParser.json());
 app.use('/user',userRouter)
-app.listen(8001, () => {
-    `server is running at port 8000 success~~~`
+
+server.listen(9093,function(){
+    console.log('start 9093');
+    
 })
