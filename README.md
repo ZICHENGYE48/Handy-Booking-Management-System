@@ -1,4 +1,8 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# A management system using React (styled-component)
+
+1. Use styled-component to improve the readability and reusability.
+2. Design and develop form validation.
+3. Implement navigation between components by using react-router-dom.
 
 ## Available Scripts
 
